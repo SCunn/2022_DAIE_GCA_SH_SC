@@ -1,1 +1,3 @@
-Data Analytics for Immersive Environments GCA1
+Data Analytics for Immersive Environments GCA1 Project
+
+
