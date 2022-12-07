@@ -1,5 +1,8 @@
 ---
-title: "jungianSandTest"
+title: "Data Analytics for Immersive Environments - Pair Project
+Descriptive & Inferential Analysis of a Jungian Sandplay VR Project
+"
+author: "Shane Cunningham, Student No.D00262648"
 output: html_document
 date: "2022-11-25"
 ---
@@ -8,7 +11,7 @@ date: "2022-11-25"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Table of Contents
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -27,3 +30,54 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+# Abstract
+
+## Aim and rationale
+
+## Participants and setting
+
+## Experiment design
+
+## Results gathering
+
+## Major findings
+
+## Findings/implications
+
+# Introduction
+## Topic and context
+
+## Rationale
+## Hypothesis
+
+# Method
+## Participants
+## Design
+## Materials
+## Procedure
+
+# Results
+## Descriptive statistics
+## Inferential statistics
+## Statistical tests
+## Magnitude and direction of results
+
+# Discussion
+## Outline findings and relation to the hypothesis
+## Limitations (if confounding variables are clearly identified by your group)
+
+# References
+
+
+
+
+
+
+
+
+
+
+
