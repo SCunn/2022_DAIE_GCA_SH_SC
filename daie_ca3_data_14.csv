@@ -12,7 +12,7 @@ test_number,gender,test_group,pre_trial_cpss,post_trial_cpss,pre_trial_or,post_t
 11,Male,Static,8.5,5.57,8.78,5.37
 12,Male,Static,6.59,7.54,6.48,7.75
 13,Male,Static,4.71,4.83,4.63,5.06
-14,Male,Static,7.45,-0.5,7.13,5.95
+14,Male,Static,7.45,0.5,7.13,5.95
 15,Male,Static,7.26,4.92,7.64,5
 16,Male,Static,4.95,5.87,4.65,6.02
 17,Male,Static,5.06,4.27,5.2,4.5
@@ -20,7 +20,7 @@ test_number,gender,test_group,pre_trial_cpss,post_trial_cpss,pre_trial_or,post_t
 19,Male,Static,6.61,6.26,6.41,6.08
 20,Male,Static,8.45,6.18,8.29,6.27
 21,Male,Static,5.02,6.55,5.12,6.53
-22,Male,NA,5.76,5.43,5.45,5.51
+22,Male,Static,5.76,5.43,5.45,5.51
 23,Male,Static,7.9,5.49,8.07,5.32
 24,Male,Static,6.39,6.29,6.36,6.14
 25,Male,Static,8.63,6.22,8.21,6.12
