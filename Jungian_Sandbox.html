@@ -366,6 +366,8 @@ Sandplay VR Project</h1>
 
 
 <!-- Show available data sets -->
+<!-- attach(data) allows use of certain functions without typing data variable every time, eg. mean(pre_trial_cpss) instead of mean(data$pre_trial_cpss)  -->
+<!-- Use of markdown header sizes # = H1, ## = H2, ### = H3...ect  -->
 <div id="table-of-contents" class="section level1">
 <h1>Table of Contents</h1>
 <div id="abstract" class="section level3">
@@ -389,6 +391,61 @@ Sandplay VR Project</h1>
 <h4>1.6 Findings/implications</h4>
 </div>
 </div>
+<div id="introduction" class="section level3">
+<h3>2. Introduction</h3>
+<div id="topic-and-context" class="section level4">
+<h4>2.1 Topic and context</h4>
+</div>
+<div id="rationale" class="section level4">
+<h4>2.2 Rationale</h4>
+</div>
+<div id="hypothesis" class="section level4">
+<h4>2.3 Hypothesis</h4>
+</div>
+</div>
+<div id="method" class="section level3">
+<h3>3. Method</h3>
+<div id="participants" class="section level4">
+<h4>3.1 Participants</h4>
+</div>
+<div id="design" class="section level4">
+<h4>3.2 Design</h4>
+</div>
+<div id="materials" class="section level4">
+<h4>3.3 Materials</h4>
+</div>
+<div id="procedure" class="section level4">
+<h4>3.4 Procedure</h4>
+</div>
+</div>
+<div id="results" class="section level3">
+<h3>4. Results</h3>
+<div id="descriptive-statistics" class="section level4">
+<h4>4.1 Descriptive statistics</h4>
+</div>
+<div id="inferential-statistics" class="section level4">
+<h4>4.2 Inferential statistics</h4>
+</div>
+<div id="statistical-tests" class="section level4">
+<h4>4.3 Statistical tests</h4>
+</div>
+<div id="magnitude-and-direction-of-results" class="section level4">
+<h4>4.4 Magnitude and direction of results</h4>
+</div>
+</div>
+<div id="discussion" class="section level3">
+<h3>5. Discussion</h3>
+<div id="outline-findings-and-relation-to-the-hypothesis" class="section level4">
+<h4>5.1 Outline findings and relation to the hypothesis</h4>
+</div>
+<div id="limitations-if-confounding-variables-are-clearly-identified-by-your-group" class="section level4">
+<h4>5.2 Limitations (if confounding variables are clearly identified by
+your group)</h4>
+</div>
+</div>
+<div id="references" class="section level3">
+<h3>6. References</h3>
+</div>
 </div>
 <div id="abstract-1" class="section level1">
 <h1>Abstract</h1>
@@ -411,36 +468,36 @@ Sandplay VR Project</h1>
 <h3>Findings/implications</h3>
 </div>
 </div>
-<div id="introduction" class="section level1">
+<div id="introduction-1" class="section level1">
 <h1>Introduction</h1>
-<div id="topic-and-context" class="section level3">
+<div id="topic-and-context-1" class="section level3">
 <h3>Topic and context</h3>
 </div>
-<div id="rationale" class="section level3">
+<div id="rationale-1" class="section level3">
 <h3>Rationale</h3>
 </div>
-<div id="hypothesis" class="section level3">
+<div id="hypothesis-1" class="section level3">
 <h3>Hypothesis</h3>
 </div>
 </div>
-<div id="method" class="section level1">
+<div id="method-1" class="section level1">
 <h1>Method</h1>
-<div id="participants" class="section level3">
+<div id="participants-1" class="section level3">
 <h3>Participants</h3>
 </div>
-<div id="design" class="section level3">
+<div id="design-1" class="section level3">
 <h3>Design</h3>
 </div>
-<div id="materials" class="section level3">
+<div id="materials-1" class="section level3">
 <h3>Materials</h3>
 </div>
-<div id="procedure" class="section level3">
+<div id="procedure-1" class="section level3">
 <h3>Procedure</h3>
 </div>
 </div>
-<div id="results" class="section level1">
+<div id="results-1" class="section level1">
 <h1>Results</h1>
-<div id="descriptive-statistics" class="section level3">
+<div id="descriptive-statistics-1" class="section level3">
 <h3>Descriptive statistics</h3>
 <!-- ** ** outside of text for bold text -->
 <div id="dimensions" class="section level4">
@@ -458,28 +515,53 @@ and 7 columns in the data frame.</p>
 <pre><code>## [1] &quot;test_number&quot;     &quot;gender&quot;          &quot;test_group&quot;      &quot;pre_trial_cpss&quot; 
 ## [5] &quot;post_trial_cpss&quot; &quot;pre_trial_or&quot;    &quot;post_trial_or&quot;</code></pre>
 </div>
+<div id="structure" class="section level4">
+<h4><strong>Structure</strong></h4>
+<pre class="r"><code>str(data)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  7 variables:
+##  $ test_number    : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ gender         : chr  &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; ...
+##  $ test_group     : chr  &quot;Static&quot; &quot;Static&quot; &quot;Static&quot; &quot;Static&quot; ...
+##  $ pre_trial_cpss : num  7.04 6.93 6.07 6.22 6.85 5.47 6.63 5.71 8.11 6.94 ...
+##  $ post_trial_cpss: num  5.67 6.23 5.91 5.8 6.02 6.7 4.54 4.45 5.58 5.32 ...
+##  $ pre_trial_or   : num  7.57 6.42 5.52 6.26 7.1 5.6 6.22 5.68 8.45 6.74 ...
+##  $ post_trial_or  : num  5.5 6.45 5.97 5.82 5.95 6.46 4.4 4.35 5.53 5.22 ...</code></pre>
 </div>
-<div id="inferential-statistics" class="section level3">
+<div id="structure-1" class="section level4">
+<h4><strong>Structure</strong></h4>
+<pre class="r"><code>stripchart(post_trial_cpss, main = &quot;Strip Chart of post_trial_cpss&quot;, pch = 21)</code></pre>
+<p><img src="data:image/png;base64,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UysaH/6A41yrYyWgp6zxbbXx4Q84zrU6VgJ6yhrfVhsf/oDjXKtjJaCnrPFttfHhDzjOtTpWAnrKGt9WRx3+2uGXk+1vAH2QZTd+p5wYAT1ljW+rAsqhCegpa3xbFVAOTUBPWePbqoByaAIKEBJQgJCAAoQEFCAkoAAhAQUICShASEABQgIKEBJQgJCAAoQEFCAkoAAhAQUICShASEABQgIKEBJQgJCAAoQEFCAkoAAhAQUICShASEABQgIKEBJQgJCAAoQEFCAkoAAhAQUICShASEABQgIKEBJQgJCAAoQEFCAkoAAhAQUICShASEABQgIKEBJQgJCAAoQEFCAkoAAhAQUICShASEABQgIKEBJQgJCAAoQEFCAkoAAhAQUICShA6H4HdAIwmvETNfoSR3To2QaOy+iNGnuBY/oAfzCAkyWgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBI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" width="672" /></p>
+<pre class="r"><code>mean(pre_trial_cpss)</code></pre>
+<pre><code>## [1] 6.246533</code></pre>
+<pre class="r"><code>mean(post_trial_cpss)</code></pre>
+<pre><code>## [1] 5.432067</code></pre>
+<pre class="r"><code>mean(pre_trial_or)</code></pre>
+<pre><code>## [1] 6.222267</code></pre>
+<pre class="r"><code>mean(post_trial_or)</code></pre>
+<pre><code>## [1] 5.476467</code></pre>
+</div>
+</div>
+<div id="inferential-statistics-1" class="section level3">
 <h3>Inferential statistics</h3>
 </div>
-<div id="statistical-tests" class="section level3">
+<div id="statistical-tests-1" class="section level3">
 <h3>Statistical tests</h3>
 </div>
-<div id="magnitude-and-direction-of-results" class="section level3">
+<div id="magnitude-and-direction-of-results-1" class="section level3">
 <h3>Magnitude and direction of results</h3>
 </div>
 </div>
-<div id="discussion" class="section level1">
+<div id="discussion-1" class="section level1">
 <h1>Discussion</h1>
-<div id="outline-findings-and-relation-to-the-hypothesis" class="section level3">
+<div id="outline-findings-and-relation-to-the-hypothesis-1" class="section level3">
 <h3>Outline findings and relation to the hypothesis</h3>
 </div>
-<div id="limitations-if-confounding-variables-are-clearly-identified-by-your-group" class="section level3">
+<div id="limitations-if-confounding-variables-are-clearly-identified-by-your-group-1" class="section level3">
 <h3>Limitations (if confounding variables are clearly identified by your
 group)</h3>
 </div>
 </div>
-<div id="references" class="section level1">
+<div id="references-1" class="section level1">
 <h1>References</h1>
 </div>
 

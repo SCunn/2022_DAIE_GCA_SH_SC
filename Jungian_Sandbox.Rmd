@@ -31,8 +31,11 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- Show available data sets -->
 ```{r include=FALSE}
 data <- read.csv("daie_ca3_data_14.csv")
+attach(data)
 ```
+<!-- attach(data) allows use of certain functions without typing data variable every time, eg. mean(pre_trial_cpss) instead of mean(data$pre_trial_cpss)  -->
 
+<!-- Use of markdown header sizes # = H1, ## = H2, ### = H3...ect  -->
 # Table of Contents
 ### 1. Abstract
 #### 1.1 Aim and rationale
@@ -41,9 +44,24 @@ data <- read.csv("daie_ca3_data_14.csv")
 #### 1.4 Results gathering
 #### 1.5 Major findings
 #### 1.6 Findings/implications
-
-
-
+### 2. Introduction
+#### 2.1 Topic and context
+#### 2.2 Rationale
+#### 2.3 Hypothesis
+### 3. Method
+#### 3.1 Participants
+#### 3.2 Design
+#### 3.3 Materials
+#### 3.4 Procedure
+### 4. Results
+#### 4.1 Descriptive statistics
+#### 4.2 Inferential statistics
+#### 4.3 Statistical tests
+#### 4.4 Magnitude and direction of results
+### 5. Discussion
+#### 5.1 Outline findings and relation to the hypothesis
+#### 5.2 Limitations (if confounding variables are clearly identified by your group)
+### 6. References
  
 # Abstract
 
@@ -87,6 +105,23 @@ The results of the dimensions check verifies that there is 150 rows and 7 column
 names(data)
 ```
 
+#### **Structure**
+```{r}
+str(data)
+```
+
+#### **Structure**
+```{r}
+stripchart(post_trial_cpss, main = "Strip Chart of post_trial_cpss", pch = 21)
+```
+
+```{r}
+mean(pre_trial_cpss)
+mean(post_trial_cpss)
+
+mean(pre_trial_or)
+mean(post_trial_or)
+```
 
 ### Inferential statistics
 ### Statistical tests
