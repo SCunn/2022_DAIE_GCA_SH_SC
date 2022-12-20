@@ -1,3 +1,6 @@
+## file for experimenting with R code 
+
+
 # create mydata var
 mydata = read.csv("daie_ca3_data_14.csv")
 
