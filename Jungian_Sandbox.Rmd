@@ -1,3 +1,9 @@
+```{r}
+```
+
+
+```{r}
+```
 
 ---
 title: Data Analytics for Immersive Environments, Pair Project Descriptive & Inferential
@@ -24,7 +30,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- Show available data sets -->
 ```{r include=FALSE}
-test_data = read.csv("daie_ca3_data_14.csv")
+data <- read.csv("daie_ca3_data_14.csv")
 ```
 
 # Table of Contents
@@ -37,22 +43,8 @@ test_data = read.csv("daie_ca3_data_14.csv")
 #### 1.6 Findings/implications
 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r test_data}
-summary(test_data)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-
-
+ 
 # Abstract
 
 ### Aim and rationale
@@ -81,6 +73,21 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 # Results
 ### Descriptive statistics
+<!-- ** ** outside of text for bold text -->
+#### 	**Dimensions**
+<!-- dim() calls for the dimensions of the data frame -->
+```{r}
+dim(data)
+```
+The results of the dimensions check verifies that there is 150 rows and 7 columns in the data frame.
+
+<!-- names() calls for the variable names of the data frame -->
+#### **Variables**
+```{r}
+names(data)
+```
+
+
 ### Inferential statistics
 ### Statistical tests
 ### Magnitude and direction of results

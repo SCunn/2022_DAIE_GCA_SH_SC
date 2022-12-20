@@ -387,36 +387,7 @@ Sandplay VR Project</h1>
 </div>
 <div id="findingsimplications" class="section level4">
 <h4>1.6 Findings/implications</h4>
-<p>This is an R Markdown document. Markdown is a simple formatting
-syntax for authoring HTML, PDF, and MS Word documents. For more details
-on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be
-generated that includes both content as well as the output of any
-embedded R code chunks within the document. You can embed an R code
-chunk like this:</p>
-<pre class="r"><code>summary(test_data)</code></pre>
-<pre><code>##   test_number        gender           test_group        pre_trial_cpss 
-##  Min.   :  1.00   Length:150         Length:150         Min.   :4.000  
-##  1st Qu.: 38.25   Class :character   Class :character   1st Qu.:5.520  
-##  Median : 75.50   Mode  :character   Mode  :character   Median :6.240  
-##  Mean   : 75.50                                         Mean   :6.247  
-##  3rd Qu.:112.75                                         3rd Qu.:6.907  
-##  Max.   :150.00                                         Max.   :8.630  
-##  post_trial_cpss  pre_trial_or   post_trial_or  
-##  Min.   :0.500   Min.   :3.450   Min.   :2.930  
-##  1st Qu.:4.772   1st Qu.:5.463   1st Qu.:4.923  
-##  Median :5.550   Median :6.220   Median :5.515  
-##  Mean   :5.432   Mean   :6.222   Mean   :5.476  
-##  3rd Qu.:6.085   3rd Qu.:6.960   3rd Qu.:6.090  
-##  Max.   :8.440   Max.   :8.780   Max.   :8.340</code></pre>
 </div>
-</div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the
-code chunk to prevent printing of the R code that generated the
-plot.</p>
 </div>
 </div>
 <div id="abstract-1" class="section level1">
@@ -471,6 +442,22 @@ plot.</p>
 <h1>Results</h1>
 <div id="descriptive-statistics" class="section level3">
 <h3>Descriptive statistics</h3>
+<!-- ** ** outside of text for bold text -->
+<div id="dimensions" class="section level4">
+<h4><strong>Dimensions</strong></h4>
+<!-- dim() calls for the dimensions of the data frame -->
+<pre class="r"><code>dim(data)</code></pre>
+<pre><code>## [1] 150   7</code></pre>
+<p>The results of the dimensions check verifies that there is 150 rows
+and 7 columns in the data frame.</p>
+<!-- names() calls for the variable names of the data frame -->
+</div>
+<div id="variables" class="section level4">
+<h4><strong>Variables</strong></h4>
+<pre class="r"><code>names(data)</code></pre>
+<pre><code>## [1] &quot;test_number&quot;     &quot;gender&quot;          &quot;test_group&quot;      &quot;pre_trial_cpss&quot; 
+## [5] &quot;post_trial_cpss&quot; &quot;pre_trial_or&quot;    &quot;post_trial_or&quot;</code></pre>
+</div>
 </div>
 <div id="inferential-statistics" class="section level3">
 <h3>Inferential statistics</h3>
