@@ -114,16 +114,23 @@ str(data)
 ```{r}
 stripchart(post_trial_cpss, main = "Strip Chart of post_trial_cpss", pch = 21)
 ```
-
+### Inferential statistics
 ```{r}
 mean(pre_trial_cpss)
 mean(post_trial_cpss)
 
 mean(pre_trial_or)
 mean(post_trial_or)
+
+hist(pre_trial_cpss)
+
+boxplot(post_trial_or ~ test_group)
+
+plot(pre_trial_or ~ log(post_trial_or))
+
 ```
 
-### Inferential statistics
+
 ### Statistical tests
 ### Magnitude and direction of results
 
