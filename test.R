@@ -20,3 +20,10 @@ mydata = read.csv("daie_ca3_data_14.csv")
 #x2 = distinct(mydata, test_group, NA, .keep_all= TRUE)
 
 distinct_all(mydata)
+
+df1 <- mydata %>%
+select(test_group, post_trial_or) %>%
+  filter(test_group == "Animated" |
+           test_group =="Control")
+
+t.test(data = df1, post_trial_or ~ test_group)

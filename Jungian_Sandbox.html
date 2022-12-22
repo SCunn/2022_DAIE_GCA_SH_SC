@@ -366,7 +366,6 @@ Sandplay VR Project</h1>
 
 
 <!-- Show available data sets -->
-<!-- attach(data) allows use of certain functions without typing data variable every time, eg. mean(pre_trial_cpss) instead of mean(data$pre_trial_cpss)  -->
 <!-- Use of markdown header sizes # = H1, ## = H2, ### = H3...ect  -->
 <div id="table-of-contents" class="section level1">
 <h1>Table of Contents</h1>
@@ -503,7 +502,7 @@ your group)</h4>
 <div id="dimensions" class="section level4">
 <h4><strong>Dimensions</strong></h4>
 <!-- dim() calls for the dimensions of the data frame -->
-<pre class="r"><code>dim(data)</code></pre>
+<pre class="r"><code>dim(jung)</code></pre>
 <pre><code>## [1] 150   7</code></pre>
 <p>The results of the dimensions check verifies that there is 150 rows
 and 7 columns in the data frame.</p>
@@ -511,13 +510,13 @@ and 7 columns in the data frame.</p>
 </div>
 <div id="variables" class="section level4">
 <h4><strong>Variables</strong></h4>
-<pre class="r"><code>names(data)</code></pre>
+<pre class="r"><code>names(jung)</code></pre>
 <pre><code>## [1] &quot;test_number&quot;     &quot;gender&quot;          &quot;test_group&quot;      &quot;pre_trial_cpss&quot; 
 ## [5] &quot;post_trial_cpss&quot; &quot;pre_trial_or&quot;    &quot;post_trial_or&quot;</code></pre>
 </div>
 <div id="structure" class="section level4">
 <h4><strong>Structure</strong></h4>
-<pre class="r"><code>str(data)</code></pre>
+<pre class="r"><code>str(jung)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    150 obs. of  7 variables:
 ##  $ test_number    : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ gender         : chr  &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; ...
@@ -550,6 +549,41 @@ and 7 columns in the data frame.</p>
 </div>
 <div id="statistical-tests-1" class="section level3">
 <h3>Statistical tests</h3>
+<pre class="r"><code># query data looking for post trial observer rated for static and control groups
+df1 &lt;- jung %&gt;%
+  select(test_group, post_trial_or) %&gt;%
+  filter(test_group == &quot;Static&quot; |
+              test_group ==&quot;Control&quot;)
+
+t.test(data = df1, post_trial_or ~ test_group)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  post_trial_or by test_group
+## t = -0.072712, df = 91.851, p-value = 0.9422
+## alternative hypothesis: true difference in means between group Control and group Static is not equal to 0
+## 95 percent confidence interval:
+##  -0.3964101  0.3684101
+## sample estimates:
+## mean in group Control  mean in group Static 
+##                5.5328                5.5468</code></pre>
+<pre class="r"><code>df1 &lt;- jung %&gt;%
+  select(test_group, post_trial_or) %&gt;%
+  filter(test_group == &quot;Animated&quot; |
+              test_group ==&quot;Control&quot;)
+
+t.test(data = df1, post_trial_or ~ test_group)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  post_trial_or by test_group
+## t = -0.88206, df = 97.311, p-value = 0.3799
+## alternative hypothesis: true difference in means between group Animated and group Control is not equal to 0
+## 95 percent confidence interval:
+##  -0.5947507  0.2287507
+## sample estimates:
+## mean in group Animated  mean in group Control 
+##                 5.3498                 5.5328</code></pre>
 </div>
 <div id="magnitude-and-direction-of-results-1" class="section level3">
 <h3>Magnitude and direction of results</h3>

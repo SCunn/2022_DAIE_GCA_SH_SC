@@ -24,16 +24,19 @@ if(!require("tidyr")) install.packages("tidyr")
 # library
 library(tidyr)
 library(ggplot2)
+library(dplyr)
 
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 <!-- Show available data sets -->
 ```{r include=FALSE}
-data <- read.csv("daie_ca3_data_14.csv")
-attach(data)
+jung <- read.csv("daie_ca3_data_14.csv")
+## attach(jung) allows use of certain functions without typing data variable every time, eg. mean(pre_trial_cpss) instead of mean(jung$pre_trial_cpss)
+
+attach(jung)
 ```
-<!-- attach(data) allows use of certain functions without typing data variable every time, eg. mean(pre_trial_cpss) instead of mean(data$pre_trial_cpss)  -->
+
 
 <!-- Use of markdown header sizes # = H1, ## = H2, ### = H3...ect  -->
 # Table of Contents
@@ -95,19 +98,19 @@ attach(data)
 #### 	**Dimensions**
 <!-- dim() calls for the dimensions of the data frame -->
 ```{r}
-dim(data)
+dim(jung)
 ```
 The results of the dimensions check verifies that there is 150 rows and 7 columns in the data frame.
 
 <!-- names() calls for the variable names of the data frame -->
 #### **Variables**
 ```{r}
-names(data)
+names(jung)
 ```
 
 #### **Structure**
 ```{r}
-str(data)
+str(jung)
 ```
 
 #### **Structure**
@@ -127,11 +130,30 @@ hist(pre_trial_cpss)
 boxplot(post_trial_or ~ test_group)
 
 plot(pre_trial_or ~ log(post_trial_or))
+```
+
+### Statistical tests
+```{r}
+
+# query data looking for post trial observer rated for static and control groups
+df1 <- jung %>%
+  select(test_group, post_trial_or) %>%
+  filter(test_group == "Static" |
+              test_group =="Control")
+
+t.test(data = df1, post_trial_or ~ test_group)
+
+df1 <- jung %>%
+  select(test_group, post_trial_or) %>%
+  filter(test_group == "Animated" |
+              test_group =="Control")
+
+t.test(data = df1, post_trial_or ~ test_group)
 
 ```
 
 
-### Statistical tests
+
 ### Magnitude and direction of results
 
 # Discussion
