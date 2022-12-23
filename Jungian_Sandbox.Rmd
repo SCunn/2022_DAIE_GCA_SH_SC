@@ -134,12 +134,31 @@ hist(pre_trial_cpss)
 
 hist(post_trial_cpss)
 
+boxplot(post_trial_or ~ gender)
+
+boxplot(post_trial_cpss ~ gender)
+
 boxplot(post_trial_or ~ test_group)
 
 jung%>%
   filter(post_trial_or < 10) %>%
   ggplot(aes(x=post_trial_or, y=test_group, col=gender))+
   geom_point(alpha=0.5)
+
+
+jung %>%
+  filter(post_trial_cpss < 10) %>%
+  ggplot(aes(x=post_trial_cpss, y=test_group, col=gender))+
+  geom_point(alpha=0.5)
+
+
+df1 <- jung %>%
+  select(gender, post_trial_or) %>%
+  filter(gender == "Female" |
+              gender =="Male")
+
+t.test(data = df1, post_trial_or ~ gender)
+
 ```
 
 
@@ -161,14 +180,6 @@ df1 <- jung %>%
               test_group =="Control")
 
 t.test(data = df1, post_trial_cpss ~ test_group)
-
-
-jung %>%
-  filter(post_trial_cpss < 10) %>%
-  ggplot(aes(x=post_trial_cpss, y=test_group, col=gender))+
-  geom_point(alpha=0.5)
-
-
 
 
 
