@@ -49,7 +49,7 @@ test_number,gender,test_group,pre_trial_cpss,post_trial_cpss,pre_trial_or,post_t
 48,Female,Static,5.44,4.56,4.9,4.69
 49,Female,Static,7.47,7.37,7.39,7.59
 50,Female,Static,5.65,4.86,5.27,5.06
-51,male,Control,6.91,5.18,7.18,5.13
+51,Male,Control,6.91,5.18,7.18,5.13
 52,Male,Control,5.89,6.92,5.51,6.81
 53,Male,Control,6.96,6.09,6.41,6.04
 54,Male,Control,5.44,6.38,5.03,6.37

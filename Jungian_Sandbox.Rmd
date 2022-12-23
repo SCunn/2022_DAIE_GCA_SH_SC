@@ -86,6 +86,7 @@ attach(jung)
 ### Rationale
 ### Hypothesis
 
+
 # Method
 ### Participants
 ### Design
@@ -109,15 +110,19 @@ names(jung)
 ```
 
 #### **Structure**
+
 ```{r}
 str(jung)
 ```
 
 #### **Structure**
+
 ```{r}
 stripchart(post_trial_cpss, main = "Strip Chart of post_trial_cpss", pch = 21)
 ```
+
 ### Inferential statistics
+
 ```{r}
 mean(pre_trial_cpss)
 mean(post_trial_cpss)
@@ -127,13 +132,19 @@ mean(post_trial_or)
 
 hist(pre_trial_cpss)
 
+hist(post_trial_cpss)
+
 boxplot(post_trial_or ~ test_group)
 
-plot(pre_trial_or ~ log(post_trial_or))
+jung%>%
+  filter(post_trial_or < 10) %>%
+  ggplot(aes(x=post_trial_or, y=test_group, col=gender))+
+  geom_point(alpha=0.5)
 ```
 
-### Statistical tests
+
 ```{r}
+
 
 # query data looking for post trial observer rated for static and control groups
 df1 <- jung %>%
@@ -143,14 +154,31 @@ df1 <- jung %>%
 
 t.test(data = df1, post_trial_or ~ test_group)
 
+
 df1 <- jung %>%
-  select(test_group, post_trial_or) %>%
-  filter(test_group == "Animated" |
+  select(test_group, post_trial_cpss) %>%
+  filter(test_group == "Static" |
               test_group =="Control")
 
-t.test(data = df1, post_trial_or ~ test_group)
+t.test(data = df1, post_trial_cpss ~ test_group)
+
+
+jung %>%
+  filter(post_trial_cpss < 10) %>%
+  ggplot(aes(x=post_trial_cpss, y=test_group, col=gender))+
+  geom_point(alpha=0.5)
+
+
+
+
 
 ```
+
+
+
+
+### Statistical tests
+
 
 
 
