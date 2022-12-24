@@ -53,17 +53,13 @@ attach(jung)
 #### 2.3 Hypothesis
 ### 3. Method
 #### 3.1 Participants
-#### 3.2 Design
-#### 3.3 Materials
-#### 3.4 Procedure
+#### 3.2 Design, Materials, Procedure
 ### 4. Results
 #### 4.1 Descriptive statistics
 #### 4.2 Inferential statistics
 #### 4.3 Statistical tests
-#### 4.4 Magnitude and direction of results
 ### 5. Discussion
 #### 5.1 Outline findings and relation to the hypothesis
-#### 5.2 Limitations (if confounding variables are clearly identified by your group)
 ### 6. References
  
 # Abstract
@@ -82,26 +78,53 @@ attach(jung)
 
 # Introduction
 ### Topic and context
-
+This is a study to determine whether
 ### Rationale
 ### Hypothesis
-
+Does Gender affect the post-trial observer rated results?
 
 # Method
 ### Participants
-### Design
-### Materials
-### Procedure
+
+The Study consists of 150 participants suffering from PTSD, of which, there were 75 male, and 75 female participants.  The participants were aged from 18 – 25 years old.  The study examines if virtual reality technology can be used to aid in the treatment of post-traumatic stress disorder.
+
+### Design, Materials, Procedure
+
+The participants were divided into three numerically equal groups,
+
+- ***Control***
+
+  - Traditional Cognitive Behavioral Therapy, no VR technology, 12 weeks of treatment. 50       minutes per week with a therapist using traditional CBT
+
+
+- ***Static***
+
+  - Non-Animated version of a VR Application
+  
+  
+- ***Animated***
+
+  - Animated version of a VR Application.
+  
+  >
+  
+- ***Age range***: 18 - 25 years
+- ***Gender*** was recorded
+- All ***groups*** were ***equal*** size
+PTSD measurements for All groups using ***observer - rated*** (therapist rated) and ***self – report*** (Child PTSD Symptom Scale Self-Report Version (CPSS-SR)) mechanisms.
+- Measurements were taken from the participants at the ***start and end*** of the study
+- Measurements of the study for all groups were scaled to range from ***0 – 10***
+
 
 # Results
 ### Descriptive statistics
 <!-- ** ** outside of text for bold text -->
 #### 	**Dimensions**
-<!-- dim() calls for the dimensions of the data frame -->
 ```{r}
+# dim() calls for the dimensions of the data frame
 dim(jung)
 ```
-The results of the dimensions check verifies that there is 150 rows and 7 columns in the data frame.
+The results of the dimensions check verifies that there is 150 rows and 7 columns in the data frame.  The first column, test_number, which was included in order for r to read the csv file, is not important for this study.
 
 <!-- names() calls for the variable names of the data frame -->
 #### **Variables**
@@ -109,49 +132,86 @@ The results of the dimensions check verifies that there is 150 rows and 7 column
 names(jung)
 ```
 
+R’s names() function displays the variable names used in the data set. The variable types are:
+
+-	test_number: numerical, non - continuous
+-	gender: categorical, blocking
+-	test_group: categorical, blocking (explanatory)
+-	pre_trial_cpss: numerical, continuous (response variable)
+-	post_trial_cpss: numerical, continuous (response variable)
+-	pre_trial_or: numerical, continuous (response variable)
+-	post_trial_or: numerical, continuous (response variable)
+
+
 #### **Structure**
 
 ```{r}
 str(jung)
 ```
 
-#### **Structure**
+The R programming language str() function displays the structure of the data set.  The example illustrates the data types involved, integers, chars and num or float data types.
 
-```{r}
-stripchart(post_trial_cpss, main = "Strip Chart of post_trial_cpss", pch = 21)
-```
 
 ### Inferential statistics
 
 ```{r}
-mean(pre_trial_cpss)
-mean(post_trial_cpss)
-
+stripchart(pre_trial_or, main = "Strip Chart of pre_trial_or", col="red" , pch = 21)
 mean(pre_trial_or)
+```
+The mean of the pre-trial observer reported results were 6.222267.
+```{r}
+stripchart(post_trial_or, main = "Strip Chart of post_trial_or", col="red", pch = 21)
 mean(post_trial_or)
+6.222267 - 5.476467
+```
+The mean of the post-trial observer reported results were 5.476467, 0.7458 less than the pre-trial mean.
+```{r}
+boxplot(pre_trial_or ~ test_group)
+```
 
-hist(pre_trial_cpss)
-
-hist(post_trial_cpss)
-
-boxplot(post_trial_or ~ gender)
-
-boxplot(post_trial_cpss ~ gender)
-
+```{r}
 boxplot(post_trial_or ~ test_group)
+```
+
+The pre-trial observer reported results with a mean of 5.476467, produced an outlier in the control group. 
+
+```{r}
+boxplot(pre_trial_or ~ gender)
+```
+
+
+```{r}
+boxplot(post_trial_or ~ gender)
+```
+
+The box plot above shows a more condensed data plot for the Males compared to the pre-trial.  The Males also have a small number of outliers of which were not evident in the pre-trial.  The Female plot has also produced an outlier of a higher value than any findings in the pre-trial results.
+
+
+```{r}
+jung%>%
+  filter(pre_trial_or < 10) %>%
+  ggplot(aes(x=pre_trial_or, y=test_group, col=gender))+
+  geom_point(alpha=0.5)
 
 jung%>%
   filter(post_trial_or < 10) %>%
   ggplot(aes(x=post_trial_or, y=test_group, col=gender))+
   geom_point(alpha=0.5)
 
+```
 
-jung %>%
-  filter(post_trial_cpss < 10) %>%
-  ggplot(aes(x=post_trial_cpss, y=test_group, col=gender))+
-  geom_point(alpha=0.5)
+The dot plots above illustrate how the different genders performed in each test group for the pre-trial and post-trial or. 
 
+```{r echo=FALSE}
+#pnorm(-2.0345, lower.tail = FALSE)* 2
+# [1] 1.958099
 
+#pt(-2.0345, df = 10, lower.tail = FALSE)*2
+# [1] 1.930718
+```
+
+```{r}
+# query data looking for post trial observer rated for Female and Male genders
 df1 <- jung %>%
   select(gender, post_trial_or) %>%
   filter(gender == "Female" |
@@ -161,43 +221,22 @@ t.test(data = df1, post_trial_or ~ gender)
 
 ```
 
-
-```{r}
-
-
-# query data looking for post trial observer rated for static and control groups
-df1 <- jung %>%
-  select(test_group, post_trial_or) %>%
-  filter(test_group == "Static" |
-              test_group =="Control")
-
-t.test(data = df1, post_trial_or ~ test_group)
-
-
-df1 <- jung %>%
-  select(test_group, post_trial_cpss) %>%
-  filter(test_group == "Static" |
-              test_group =="Control")
-
-t.test(data = df1, post_trial_cpss ~ test_group)
-
-
-
-```
-
-
-
+T-test results to test whether the post_trial_or results have been effected by the gender of the participants. 
 
 ### Statistical tests
 
+From the result of the t-test we can reject the null hypothesis. This is due to the difference in means between the two groups is not equal to 0. The alternative hypothesis is also verified by the 95 percent confidence interval where the difference will be between  -0.629225689 -0.008907645.
 
 
 
-### Magnitude and direction of results
+
+
+
 
 # Discussion
 ### Outline findings and relation to the hypothesis
-### Limitations (if confounding variables are clearly identified by your group)
+Due to acceptance of the alternative hypothesis, the data are showing a difference in the means for the male and female results from the post-trial observer reported study and rejecting a false null hypothesis (p(rejecting a false H0)= 1 - B).  
+
 
 # References
 
