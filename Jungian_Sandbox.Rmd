@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
 ```{r}
 ```
 
@@ -66,22 +72,45 @@ attach(jung)
 
 ### Aim and rationale
 
+The aim and rationale of this study is to determine if Virtual Reality technology provides a viable alternative solution for treating post-traumatic stress disorder patients.  The hypothesis of this report is to explore if the gender of the patient is affecting the post-trial observer rated results.
+
 ### Participants and setting
+
+The Study consists of 150 participants suffering from PTSD, of which, there were 75 male, and 75 female participants.  The participants were aged from 18 – 25 years old. 
 
 ### Experiment design
 
+The participants were divided into three groups, control, static, animated, and were tested using observer rated and self-report mechanisms. 
+
 ### Results gathering
+
+The data was tested by studying the effects of the different variables and the data structure.  Inferential testing was applied using the t-student test to explore the difference in the means of both genders in the post-trial observer rated results.
 
 ### Major findings
 
-### Findings/implications
+The major findings of the study reject the null hypothesis. 
+
+
 
 # Introduction
 ### Topic and context
-This is a study to determine whether
+
+This is a study to determine whether Virtual Reality technology provides a viable alternative solution for treating post-traumatic stress disorder patients.  The VR applications used for this study are based on the concept of Jungian sandplay, a therapeutic method stemming from philosophical beliefs of Carl Jung who emphasized that through collective unconsciousness, the human psyche is pre-conditioned as a result of evolution.  Jung states that ancestral memories through archetypes represent themes from various cultures and are expressed throughout art, literature, and sub-conscious thought (McLeod, 2018).  Sandplay therapy was developed in the 1950’s by Dora Klaff who based the practice on the work of child psychologist Margaret Lowenfeld (Psychology Today, 2022).  Sandplay therapy helps the patient to express through creating their own scene using different artifacts of their own choosing, the patients’ actions are then analyzed by a therapist or a counselor (Psychology Today, 2022).  
+
 ### Rationale
+
+The purpose of  this report is to put into practice the formulation of a hypothesis, to create statistical and inferential tests, and to generate descriptive statistics, visual graphs, all using the R programming language and R markdown to generate a notebook of the findings.
+
 ### Hypothesis
-Does Gender affect the post-trial observer rated results?
+
+Null Hypothesis 
+
+- Ho: Gender does not make any difference to the post-trial observer rated results, any issues that occur will only happen by chance.
+
+Alternative Hypothesis 
+
+- Ha: Gender is affecting the post-trial observer rated results.
+
 
 # Method
 ### Participants
@@ -106,12 +135,17 @@ The participants were divided into three numerically equal groups,
 
   - Animated version of a VR Application.
   
-  >
+>
   
 - ***Age range***: 18 - 25 years
 - ***Gender*** was recorded
-- All ***groups*** were ***equal*** size
-PTSD measurements for All groups using ***observer - rated*** (therapist rated) and ***self – report*** (Child PTSD Symptom Scale Self-Report Version (CPSS-SR)) mechanisms.
+- All ***groups*** were of ***equal*** size
+- PTSD measurements for All groups using:
+  - ***observer - rated*** (therapist rated)  
+  - ***self – report*** (Child PTSD Symptom Scale Self-Report Version (CPSS-SR)) mechanisms.
+  
+>
+
 - Measurements were taken from the participants at the ***start and end*** of the study
 - Measurements of the study for all groups were scaled to range from ***0 – 10***
 
@@ -227,19 +261,50 @@ T-test results to test whether the post_trial_or results have been effected by t
 
 From the result of the t-test we can reject the null hypothesis. This is due to the difference in means between the two groups is not equal to 0. The alternative hypothesis is also verified by the 95 percent confidence interval where the difference will be between  -0.629225689 -0.008907645.
 
-
-
-
-
-
-
 # Discussion
 ### Outline findings and relation to the hypothesis
-Due to acceptance of the alternative hypothesis, the data are showing a difference in the means for the male and female results from the post-trial observer reported study and rejecting a false null hypothesis (p(rejecting a false H0)= 1 - B).  
-
+Due to acceptance of the alternative hypothesis, the data are showing a difference in the means for the male and female results from the post-trial observer reported study and rejecting a false null hypothesis (p(rejecting a false H0)= 1 - B).  The overall findings prove that the patients did not respond positively to the study, as the study shows, the average results from the post-trial observer reported, control, and post-trial cpss declined in all tests.  The result from the study also revealed outliers which could be useful in further studies of the data.
 
 # References
 
+Aron, E.N. and Aron, A. (1997) ‘Sensory-processing sensitivity and its relation to introversion and emotionality’, Journal of Personality and Social Psychology, 73(2), pp. 345–368. Available at: https://doi.org/10.1037//0022-3514.73.2.345.
+Best Practices in Preparing Data Files for Importing into R - Easy Guides - Wiki - STHDA (no date). Available at: http://www.sthda.com/english/wiki/best-practices-in-preparing-data-files-for-importing-into-r#prepare-your-file (Accessed: 10 December 2022).
+
+Bhalla, D. (no date) ‘dplyr Tutorial : Data Manipulation (50 Examples)’, ListenData. Available at: https://www.listendata.com/2016/08/dplyr-tutorial.html (Accessed: 10 December 2022).
+
+Foundations for Inference: Point Estimates (2019). Available at: https://www.youtube.com/watch?v=oLW_uzkPZGA (Accessed: 12 December 2022).
+
+Hypothesis Testing Fundamentals (2015). Available at: https://www.youtube.com/watch?v=NVbPE1_Cbx8 (Accessed: 11 December 2022).
+
+Independent-samples t-test using R, Excel and RStudio (page 2) | Setting up your data (no date). Available at: https://statistics.laerd.com/r-tutorials/independent-samples-t-test-using-r-excel-and-rstudio-2.php (Accessed: 10 December 2022).
+
+Inference for Estimators Other Than the Mean (2014). Available at: https://www.youtube.com/watch?v=PUMBNtVKr_g (Accessed: 12 December 2022).
+
+Inferential Statistics - an overview | ScienceDirect Topics (no date). Available at: https://www.sciencedirect.com/topics/medicine-and-dentistry/inferential-statistics (Accessed: 23 December 2022).
+
+Intro to Confidence Intervals via Proportions (2019). Available at: https://www.youtube.com/watch?v=A6_W8qY8zJo (Accessed: 12 December 2022).
+
+Learn dplyr: Learn R: Data Cleaning Cheatsheet (no date) Codecademy. Available at: https://www.codecademy.com/learn/learn-dplyr/modules/learn-r-data-cleaning/cheatsheet (Accessed: 10 December 2022).
+
+Markdown Cheat Sheet | Markdown Guide (no date). Available at: https://www.markdownguide.org/cheat-sheet/ (Accessed: 10 December 2022).
+
+McCombes, S. (2022) How to Write a Strong Hypothesis | Steps & Examples, Scribbr. Available at: https://www.scribbr.com/methodology/hypothesis/ (Accessed: 10 December 2022).
+
+McLeod, Dr.S. (2018) Carl Jung’s Theories: Archetypes, & The Collective Unconscious, SimplyPsychology. Available at: https://www.simplypsychology.org/carl-jung.html.
+Post-traumatic stress disorder (PTSD) - Symptoms and causes (no date) Mayo Clinic. Available at: https://www.mayoclinic.org/diseases-conditions/post-traumatic-stress-disorder/symptoms-causes/syc-20355967 (Accessed: 23 December 2022).
+
+post-traumatic-stress-disorder-ptsd-treatment (no date) HSE.ie. Available at: https://www2.hse.ie/conditions/ptsd/treatment/ (Accessed: 23 December 2022).
+Psychology Today (2022) Sandplay Therapy | Psychology Today Ireland, Psychology Today. Available at: https://www.psychologytoday.com/ie/therapy-types/sandplay-therapy (Accessed: 7 December 2022).
+
+PTSD Symptom Scale-Interview Version - PsycNET (no date). Available at: https://psycnet.apa.org/doiLanding?doi=10.1037%2Ft05176-000 (Accessed: 23 December 2022).
+
+R Markdown for a Data Analysis Report (2016). Available at: https://www.youtube.com/watch?v=0bxa7rkur9o (Accessed: 7 December 2022).
+
+R programming for beginners – statistic with R (t-test and linear regression) and dplyr and ggplot (2017). Available at: https://www.youtube.com/watch?v=ANMuuq502rE (Accessed: 20 December 2022).
+
+Riederer, Y.X., Christophe Dervieux, Emily (no date a) How to read this book | R Markdown Cookbook. Available at: https://bookdown.org/yihui/rmarkdown-cookbook/how-to-read-this-book.html (Accessed: 10 December 2022).
+
+Riederer, Y.X., Christophe Dervieux, Emily (no date b) R Markdown Cookbook. Available at: https://bookdown.org/yihui/rmarkdown-cookbook/ (Accessed: 10 December 2022).
 
 
 
